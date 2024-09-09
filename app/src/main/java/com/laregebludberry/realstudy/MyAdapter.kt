@@ -1,19 +1,23 @@
 package com.laregebludberry.realstudy
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.laregebludberry.realstudy.databinding.ItemBinding
 
-class MyAdapter(val numbers: List<Int>) :
-    RecyclerView.Adapter<MyAdapter.NumberViewHolder>() {
+class MyAdapter(val numbers: MutableList<Int>, val storeList: ArrayList<Int>) : RecyclerView.Adapter<MyAdapter.NumberViewHolder>() {
 
-    inner class NumberViewHolder(val binding: ItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class NumberViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(number: Int) {
-            binding.text1.text = numbers.toString()
+            binding.text1.text = number.toString()
+
+            // Store 버튼 클릭 이벤트 처리
+            binding.Store.setOnClickListener {
+                // 번호를 storeList에 추가
+                storeList.add(number)
+                println("Stored number: $number")
+            }
         }
     }
 
