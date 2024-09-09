@@ -1,0 +1,9 @@
+<resources>
+    <!-- 기존 스타일 정의가 있을 경우 함께 작성 -->
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

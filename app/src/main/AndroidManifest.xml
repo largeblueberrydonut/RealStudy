@@ -18,6 +18,7 @@
         <activity
             android:name=".ChangeActivity"
             android:exported="false" />
+        <activity android:name=".util.Profile" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

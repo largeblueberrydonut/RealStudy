@@ -29,5 +29,10 @@ class AcceptActivity : AppCompatActivity() {
             val intent = Intent(this, ChangeActivity::class.java)
             startActivity(intent)
         }
+
+        binding.goHome.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

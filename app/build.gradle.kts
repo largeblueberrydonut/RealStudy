@@ -7,9 +7,7 @@ android {
     namespace = "com.laregebludberry.realstudy"
     compileSdk = 34
 
-    viewBinding{
-        enable=true
-    }
+
     defaultConfig {
         applicationId = "com.laregebludberry.realstudy"
         minSdk = 26
@@ -18,6 +16,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    viewBinding {
+        enable = true
     }
 
     buildTypes {
@@ -29,17 +31,26 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.0"
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -47,6 +58,10 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+    implementation(libs.androidx.drawerlayout)
+    implementation("androidx.compose.material3:material3:1.3.0")
+    implementation("androidx.compose.material3:material3-window-size-class:1.3.0")
+    implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.3.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
