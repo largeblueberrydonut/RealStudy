@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation(libs.androidx.drawerlayout)
     implementation("androidx.compose.material3:material3:1.3.0")
     implementation("androidx.compose.material3:material3-window-size-class:1.3.0")

@@ -13,4 +13,7 @@
         android:id="@+id/nav_settings"
         android:title="Settings"
         android:icon="@drawable/ic_settings"/>
+    <item
+        android:id="@+id/ViewPager2"
+        android:title="ViewPager2"/>
 </menu>

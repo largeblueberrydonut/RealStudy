@@ -6,9 +6,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.text.font.FontVariation
 import androidx.core.view.GravityCompat
+import androidx.viewpager.widget.ViewPager
 import com.laregebludberry.realstudy.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.laregebludberry.realstudy.fragment.SettingsFragment
+import com.laregebludberry.realstudy.util.MyViewPager
 import com.laregebludberry.realstudy.util.Profile
 
 
@@ -73,6 +75,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 fragmentTransaction.addToBackStack(null)
                 fragmentTransaction.commit()
             }//이 구조는 액티비티 -> 프래그먼트로 화면 전환
+            R.id.ViewPager2 -> {
+                val intentThree = Intent(this, MyViewPager::class.java)
+                startActivity(intentThree) //뷰페이저2로 넘어가고 뷰페이저 2에서 또다른 프래그먼트를 개발완료 후 연결하기
+            }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START) // 드로어 닫기
         return true
