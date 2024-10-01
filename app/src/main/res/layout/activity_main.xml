@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <!-- 메인 화면을 구성하는 ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-
+        <!-- 상단의 툴바 (Toolbar) -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -20,12 +20,21 @@
             android:background="@color/navy_blue"
             android:minHeight="?attr/actionBarSize"
             android:elevation="4dp"
-            android:title="My Cool Toolbar"
+            android:title="My Toolbar"
             android:navigationIcon="@drawable/ic_menu"
             app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-            app:titleTextAppearance="@style/Toolbar.TitleText"/>
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- 프래그먼트를 담을 FrameLayout -->
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toTopOf="@id/bottomnavigation" />
 
+        <!-- 메인 화면의 텍스트 -->
         <TextView
             android:id="@+id/MainText"
             android:layout_width="wrap_content"
@@ -34,9 +43,12 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
-            android:layout_gravity="center"/>
+            app:layout_constraintTop_toTopOf="@id/fragment_container"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-
+        <!-- 컨텐츠 변경 버튼 -->
         <Button
             android:id="@+id/ChangeButton"
             android:layout_width="wrap_content"
@@ -44,18 +56,28 @@
             android:text="change content"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintTop_toBottomOf="@id/MainText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
+        <!-- 하단의 네비게이션 바 -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomnavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:itemHorizontalTranslationEnabled="false"
+            app:menu="@menu/bottom_nav_menu" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- 사이드 네비게이션 메뉴 (NavigationView) -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationview"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:menu="@menu/nav_menu"/>
+        app:menu="@menu/nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

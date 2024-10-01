@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/recommend"
+
+        android:title="추천" />
+    <item
+        android:id="@+id/search"
+
+        android:title="검색" />
+    <item
+        android:id="@+id/gallery"
+
+        android:title="갤러리 둘러보기" />
+    <item
+        android:id="@+id/myfavorite"
+
+        android:title="즐겨찾기"/>
+    <item
+        android:id="@+id/option"
+
+        android:title="설정"/>
+
+</menu>

@@ -27,7 +27,7 @@ class MyAdapter(val numbers: MutableList<Int>, val storeList: ArrayList<Int>) : 
     }
 
     override fun onBindViewHolder(holder: NumberViewHolder, position: Int) {
-        holder.bind(numbers[position])
+        holder.bind(numbers[position])//뷰 홀더에 리스트 포지션 결합
     }
 
     override fun getItemCount(): Int = numbers.size

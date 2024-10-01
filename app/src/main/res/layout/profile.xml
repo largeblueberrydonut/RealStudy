@@ -42,5 +42,13 @@
         android:textStyle="bold"
         android:textSize="18dp">
     </TextView>
+    <Button
+        android:id="@+id/goHomeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO Home"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

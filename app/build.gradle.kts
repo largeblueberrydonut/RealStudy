@@ -43,6 +43,7 @@ android {
 
     buildFeatures {
         compose = true
+        viewBinding = true
     }
 
     composeOptions {
@@ -51,6 +52,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.preference)
+    implementation(libs.androidx.annotation)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    val fragment_version = "1.8.3"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -62,6 +68,7 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.3.0")
     implementation("androidx.compose.material3:material3-window-size-class:1.3.0")
     implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.3.0")
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")// Kotlin
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
