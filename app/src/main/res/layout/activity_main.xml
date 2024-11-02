@@ -11,6 +11,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/InstarViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <!-- 상단의 툴바 (Toolbar) -->
         <com.google.android.material.appbar.MaterialToolbar

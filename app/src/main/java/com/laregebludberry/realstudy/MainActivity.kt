@@ -12,6 +12,7 @@ import com.google.android.material.navigation.NavigationView
 import com.laregebludberry.realstudy.fragment.SettingsFragment
 import com.laregebludberry.realstudy.util.MyViewPager
 import com.laregebludberry.realstudy.util.Profile
+import androidx.viewpager2.widget.ViewPager2
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -40,13 +41,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-
+        //화면 전환
         binding.ChangeButton.setOnClickListener {
             val intent = Intent(this, ChangeActivity::class.java)//화면 전환
             startActivity(intent)
         }
 
         binding.navigationview.setNavigationItemSelectedListener(this)
+
+        val viewpager:ViewPager2 = binding.InstarViewPager
+        val adapter = InstarViewPagerAdapter(this)
+        InstarViewPager.adapter = adapter
 
     }
 
@@ -58,7 +63,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return super.onOptionsItemSelected(item)
     }
 
-
+    //왼쪽 드로어 레이아웃 열때 가정한 코드
     override fun onNavigationItemSelected(item: android.view.MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_profile -> {
